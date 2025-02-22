@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class Controller : MonoBehaviour
 {
+    [SerializeField] private ScoreManager scoreManager;
     [Header("Pipe Settings")]
     [SerializeField] private Boru pipePrefab;
     [SerializeField] private float pipeSpeed = 5f;
@@ -16,7 +17,7 @@ public class Controller : MonoBehaviour
     [SerializeField] private float speedIncreaseRate = 0.1f; // Speed increase per second
     [SerializeField] private float maxPipeSpeed = 15f; // Maximum speed limit
     [SerializeField] private float gameTime; // Track how long the game has been running
-
+    
 
     private float _timer;
     private bool _isGameActive = true;
@@ -78,6 +79,7 @@ public class Controller : MonoBehaviour
     public void StopGame()
     {
         _isGameActive = false;
+        scoreManager.StopScoring();
     }
 
 }
