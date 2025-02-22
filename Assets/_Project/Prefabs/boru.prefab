@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 4157563098174609659}
   - component: {fileID: 5477207918061327941}
   m_Layer: 0
-  m_Name: boru
+  m_Name: Boru
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
