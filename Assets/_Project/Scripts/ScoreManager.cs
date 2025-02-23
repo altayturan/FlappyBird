@@ -13,10 +13,20 @@ public class ScoreManager : MonoBehaviour
     private float _displayedScore;
     private bool _isScoring = true;
 
+    public float CurrentScore => _currentScore;
+
     private void Start()
     {
         _currentScore = 0;
         _displayedScore = 0;
+        UpdateScoreDisplay();
+    }
+
+    public void ResetScore()
+    {
+        _currentScore = 0;
+        _displayedScore = 0;
+        _isScoring = true;
         UpdateScoreDisplay();
     }
 
