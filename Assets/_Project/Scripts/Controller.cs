@@ -26,7 +26,7 @@ public class Controller : MonoBehaviour
 
     private List<Boru> _pipes = new();
 
-
+    public float CurrentPipeSpeed => _currentPipeSpeed;
     private void Start()
     {
         _currentPipeSpeed = pipeSpeed;
