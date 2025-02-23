@@ -29,16 +29,6 @@ public class Boru : MonoBehaviour
         _speed = newSpeed;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Controller controller = FindObjectOfType<Controller>();
-            if (controller != null)
-            {
-                controller.StopGame();
-            }
-        }
-    }
+    
 
 }

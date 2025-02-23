@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5427123563281216288}
   m_Layer: 0
   m_Name: ust_boru
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0036020428, y: -0.022811115}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -132,7 +132,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.52, y: 3.2}
+  m_Size: {x: 0.41194364, y: 3.154378}
   m_EdgeRadius: 0
 --- !u!1 &5877890447606731633
 GameObject:
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 2245691985876072681}
   m_Layer: 0
   m_Name: alt_boru
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,7 +256,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00000021606684, y: -0.020529985}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -266,7 +266,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.52, y: 3.2}
+  m_Size: {x: 0.36879855, y: 3.1589403}
   m_EdgeRadius: 0
 --- !u!1 &7345544051183828766
 GameObject:

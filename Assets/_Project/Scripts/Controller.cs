@@ -80,6 +80,7 @@ public class Controller : MonoBehaviour
     {
         _isGameActive = false;
         scoreManager.StopScoring();
+        Time.timeScale = 0;
     }
 
 }

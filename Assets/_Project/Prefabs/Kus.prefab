@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6020567172952598591}
   - component: {fileID: 9032610372773029432}
-  - component: {fileID: 6255662958175255637}
   - component: {fileID: 3738048965784393873}
+  - component: {fileID: 5609203401675332322}
+  - component: {fileID: 7273205241211493211}
   m_Layer: 0
   m_Name: Kus
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.16, y: 0.52, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.6718, y: 2.6718, z: 2.6718}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,8 +90,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6255662958175255637
-BoxCollider2D:
+--- !u!114 &3738048965784393873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3960964574805457758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e3e2e4647f9e748b7556302fc8bcd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 6
+  gravity: -17
+  rotationSpeed: 200
+  maxRotationAngle: 35
+  minRotationAngle: -60
+--- !u!95 &5609203401675332322
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3960964574805457758}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8abacf2b00d35483ebf6474d4378f958, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &7273205241211493211
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,22 +173,23 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.34, y: 0.24}
-  m_EdgeRadius: 0
---- !u!114 &3738048965784393873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3960964574805457758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8e3e2e4647f9e748b7556302fc8bcd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 5
-  gravity: -9.8
-  rotationSpeed: 200
-  maxRotationAngle: 35
-  minRotationAngle: -60
+  m_Points:
+    m_Paths:
+    - - {x: -0.051827513, y: 0.122355826}
+      - {x: -0.09526418, y: 0.10822102}
+      - {x: -0.11463876, y: 0.083509415}
+      - {x: -0.13899103, y: 0.06604706}
+      - {x: -0.16039632, y: 0.043236375}
+      - {x: -0.16948056, y: -0.014806105}
+      - {x: -0.17235582, y: -0.08526414}
+      - {x: -0.15411058, y: -0.10822104}
+      - {x: -0.07697881, y: -0.12321565}
+      - {x: 0.0364427, y: -0.120347455}
+      - {x: 0.1366306, y: -0.10713088}
+      - {x: 0.15706737, y: -0.083485164}
+      - {x: 0.17117791, y: -0.04639353}
+      - {x: 0.17094268, y: -0.011264659}
+      - {x: 0.13483302, y: 0.06440921}
+      - {x: 0.095792465, y: 0.10824528}
+      - {x: 0.0763693, y: 0.122355804}
+  m_UseDelaunayMesh: 0

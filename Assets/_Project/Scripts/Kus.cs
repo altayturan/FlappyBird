@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -57,4 +58,16 @@ public class Kus : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, _currentRotation);
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.LogError(other.collider.tag);
+        if (other.collider.CompareTag("Pipe"))
+        {
+            Controller controller = FindObjectOfType<Controller>();
+            if (controller != null)
+            {
+                controller.StopGame();
+            }
+        }
+    }
 }
