@@ -28,7 +28,7 @@ public class GameOverScreen : MonoBehaviour
         gameStartCanvas.enabled = true;
         
         var controller = FindObjectOfType<Controller>();
-        var bird = FindObjectOfType<Kus>();
+        var bird = FindObjectOfType<Bird>();
     
         if (controller != null)
         {

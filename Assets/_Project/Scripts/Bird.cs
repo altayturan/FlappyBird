@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Kus : MonoBehaviour
+public class Bird : MonoBehaviour
 {
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float gravity = -9.8f;
@@ -41,6 +41,7 @@ public class Kus : MonoBehaviour
     private void Jump()
     {
         _velocity.y = jumpForce;
+        AudioController.Instance.PlayWingSound();
     }
 
     private void UpdateRotation()
@@ -73,7 +74,7 @@ public class Kus : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.CompareTag("Pipe"))
+        if (other.collider.CompareTag("Pipe") || other.collider.CompareTag("Ground"))
         {
             Controller controller = FindObjectOfType<Controller>();
             if (controller != null)
@@ -81,6 +82,7 @@ public class Kus : MonoBehaviour
                 controller.StopGame();
                 gameOverScreen.OpenGameOverCanvas();
             }
+            AudioController.Instance.PlayDieSound();
         }
     }
 }
