@@ -9,6 +9,7 @@ public class Bird : MonoBehaviour
     [SerializeField] private float rotationSpeed = 200f;
     [SerializeField] private float maxRotationAngle = 35f;
     [SerializeField] private float minRotationAngle = -90f;
+    [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private Controller controller;
     [SerializeField] private GameOverScreen gameOverScreen;
 
@@ -59,13 +60,13 @@ public class Bird : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, _currentRotation);
     }
-    
+
     public void ResetBird()
     {
         // Reset position to starting position
         transform.position = _initialPosition; // Or your desired starting position
         transform.rotation = Quaternion.identity;
-    
+
         // Reset physics
         _velocity = Vector2.zero;
         _currentRotation = 0f;
@@ -76,13 +77,19 @@ public class Bird : MonoBehaviour
     {
         if (other.collider.CompareTag("Pipe") || other.collider.CompareTag("Ground"))
         {
-            Controller controller = FindObjectOfType<Controller>();
-            if (controller != null)
-            {
-                controller.StopGame();
-                gameOverScreen.OpenGameOverCanvas();
-            }
+            controller.StopGame();
+            gameOverScreen.OpenGameOverCanvas();
             AudioController.Instance.PlayDieSound();
+        }
+
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("ScoreArea"))
+        {
+            scoreManager.GiveScore();
         }
     }
 }

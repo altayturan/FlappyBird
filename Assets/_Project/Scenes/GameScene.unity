@@ -1634,6 +1634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dieClip: {fileID: 8300000, guid: 174466599ee2d408fb31241f79745d43, type: 3}
   wingClip: {fileID: 8300000, guid: 37f66833fcda4404e9062635b568e30e, type: 3}
+  scoreClip: {fileID: 8300000, guid: 27644b0c9cf3843d1addad82a39be446, type: 3}
   audioSource: {fileID: 773200348}
 --- !u!4 &773200350
 Transform:
@@ -3571,6 +3572,10 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1185311584}
+    - target: {fileID: 3738048965784393873, guid: 5fdb33590631443768d9aaec601c425d, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 1185311586}
     - target: {fileID: 3738048965784393873, guid: 5fdb33590631443768d9aaec601c425d, type: 3}
       propertyPath: gameOverScreen
       value: 

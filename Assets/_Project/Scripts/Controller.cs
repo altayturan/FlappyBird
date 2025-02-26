@@ -123,7 +123,6 @@ public class Controller : MonoBehaviour
     public void StopGame()
     {
         _isGameActive = false;
-        scoreManager.StopScoring();
         Time.timeScale = 0;
     }
 }
