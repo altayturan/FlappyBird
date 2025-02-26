@@ -6,6 +6,8 @@ public class CameraAdjuster : MonoBehaviour
     private void Start()
     {
         if (Camera.main != null) Camera.main.orthographicSize = CalculateOrthographicSize();
+
+        Application.targetFrameRate = 60;
     }
 
     private float CalculateOrthographicSize()

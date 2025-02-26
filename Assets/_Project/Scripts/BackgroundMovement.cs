@@ -22,6 +22,14 @@ public class BackgroundMovement : MonoBehaviour
         for (int i = 0; i < backgrounds.Count; i++)
         {
             initialPositions[i] = backgrounds[i].transform.position;
+            
+            if (i > 0)
+            {
+                Vector3 position = initialPositions[0];
+                position.x += backgroundWidth * i;
+                backgrounds[i].transform.position = position;
+                initialPositions[i] = position;
+            }
         }
         
         resetXPosition = initialPositions[0].x - backgroundWidth;
@@ -36,17 +44,18 @@ public class BackgroundMovement : MonoBehaviour
 
             if (bg.transform.position.x <= resetXPosition)
             {
-                float rightmostX = float.MinValue;
-                foreach (GameObject checkBg in backgrounds)
+                GameObject rightmostGround = backgrounds[0];
+                foreach (GameObject other in backgrounds)
                 {
-                    if (checkBg != bg && checkBg.transform.position.x > rightmostX)
+                    if (other.transform.position.x > rightmostGround.transform.position.x)
                     {
-                        rightmostX = checkBg.transform.position.x;
+                        rightmostGround = other;
                     }
                 }
 
+                // Position exactly one width away from the rightmost piece
                 Vector3 newPosition = bg.transform.position;
-                newPosition.x = rightmostX + backgroundWidth;
+                newPosition.x = backgroundWidth*3f;
                 newPosition.y = initialPositions[i].y;
                 newPosition.z = initialPositions[i].z;
                 bg.transform.position = newPosition;

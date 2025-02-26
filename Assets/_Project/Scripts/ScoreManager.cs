@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
 
     private float _currentScore;
     private float _displayedScore;
-    private bool _isScoring = true;
+    private bool _isScoring = false;
 
     public float CurrentScore => _currentScore;
 

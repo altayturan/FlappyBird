@@ -52,6 +52,7 @@ public class Controller : MonoBehaviour
         _isGameActive = true;
         gameStartCanvas.enabled = false;
         gameplayCanvas.enabled = true;
+        scoreManager.ResetScore();
     }
 
     public void RestartGame()

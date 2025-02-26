@@ -22,6 +22,16 @@ public class GroundMovement : MonoBehaviour
         for (int i = 0; i < grounds.Count; i++)
         {
             initialPositions[i] = grounds[i].transform.position;
+            
+            // Ensure proper initial spacing
+            if (i > 0)
+            {
+                Vector3 position = initialPositions[0];
+                position.x += groundWidth * i;
+                grounds[i].transform.position = position;
+                initialPositions[i] = position;
+            }
+
         }
         
         resetXPosition = initialPositions[0].x - groundWidth;
@@ -31,25 +41,28 @@ public class GroundMovement : MonoBehaviour
     {
         for (int i = 0; i < grounds.Count; i++)
         {
-            GameObject bg = grounds[i];
-            bg.transform.Translate(Vector3.left * (controller.CurrentPipeSpeed * Time.deltaTime));
+            GameObject ground = grounds[i];
+            ground.transform.Translate(Vector3.left * (controller.CurrentPipeSpeed * Time.deltaTime));
 
-            if (bg.transform.position.x <= resetXPosition)
+            if (ground.transform.position.x <= resetXPosition)
             {
-                float rightmostX = float.MinValue;
-                foreach (GameObject checkBg in grounds)
+                GameObject rightmostGround = grounds[0];
+                foreach (GameObject other in grounds)
                 {
-                    if (checkBg != bg && checkBg.transform.position.x > rightmostX)
+                    if (other.transform.position.x > rightmostGround.transform.position.x)
                     {
-                        rightmostX = checkBg.transform.position.x;
+                        rightmostGround = other;
                     }
                 }
 
-                Vector3 newPosition = bg.transform.position;
-                newPosition.x = rightmostX + groundWidth;
+
+                // Position exactly one width away from the rightmost piece
+                Vector3 newPosition = ground.transform.position;
+                newPosition.x = groundWidth*3f;
                 newPosition.y = initialPositions[i].y;
                 newPosition.z = initialPositions[i].z;
-                bg.transform.position = newPosition;
+                ground.transform.position = newPosition;
+
             }
         }
     }
